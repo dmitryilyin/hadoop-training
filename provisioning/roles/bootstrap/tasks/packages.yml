@@ -1,0 +1,56 @@
+---
+
+- name: Install the common packages
+  package:
+    pkg: "{{item}}"
+    state: present
+  with_items:
+    - net-tools
+    - wget
+    - lsof
+    - mc
+    - tcpdump
+    - nmap
+    - curl
+    - iotop
+    - vim
+    - strace
+    - bzip2
+    - unzip
+    - rsync
+    - atop
+    - htop
+    - tmux
+    - sysstat
+    - tree
+    - telnet
+    - traceroute
+    - bash-completion
+    - openssl
+    - bind-utils
+  tags:
+    - bootstrap
+
+- name: Install Netcat and MailX on a RedHat system
+  package:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - nc
+    - mailx
+    - yum-utils
+  tags: 
+    - bootstrap
+  when: ansible_os_family == "RedHat"
+
+- name: Install Netcat and Mailutils on a Debian system
+  package:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - netcat
+    - mailutils
+  tags:
+    - bootstrap
+  when: ansible_os_family == "Debian"
+

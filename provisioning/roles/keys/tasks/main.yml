@@ -1,0 +1,45 @@
+---
+
+- name: Install the SSH Public key for
+  authorized_key:
+    user: root
+    state: present
+    key: "{{ lookup('file', 'id_rsa.pub') }}"
+
+- name: Install the SSH Public key for
+  authorized_key:
+    user: vagrant
+    state: present
+    key: "{{ lookup('file', 'id_rsa.pub') }}"
+
+- name: Prepare the root .ssh folder
+  file:
+    path: /root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Install the SSH Private key for root
+  copy:
+    src: id_rsa
+    dest: /root/.ssh/id_rsa
+    mode: 0700
+    owner: root
+    group: root
+
+- name: Prepare the vagrant .ssh folder
+  file:
+    path: /home/vagrant/.ssh
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0700
+
+- name: Install the SSH Private key for root
+  copy:
+    src: id_rsa
+    dest: /home/vagrant/.ssh/id_rsa
+    mode: 0700
+    owner: vagrant
+    group: vagrant

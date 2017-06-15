@@ -1,0 +1,12 @@
+---
+
+- name: Test this role
+  hosts: localhost
+  connection: local
+
+  become: true
+  become_method: sudo
+  become_user: root
+
+  roles:
+  - bootstrap

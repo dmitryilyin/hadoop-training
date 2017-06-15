@@ -1,0 +1,15 @@
+---
+
+- name: Install the Ambari repository
+  yum_repository:
+    name: ambari
+    state: present
+    description: Ambari Repository
+    baseurl: '{{ ambari_repo_baseurl }}'
+    gpgkey: '{{ ambari_repo_gpgkey }}'
+    gpgcheck: yes
+    enabled: yes
+    priority: 1
+  tags:
+    - ambari
+  when: ansible_os_family == "RedHat"

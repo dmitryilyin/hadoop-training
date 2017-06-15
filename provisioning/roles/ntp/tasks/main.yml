@@ -1,0 +1,12 @@
+---
+
+- name: Install the NTP package
+  yum:
+    name: ntp
+    state: present
+
+- name: Run and enable the ntp service
+  service:
+    name: ntpd
+    state: started
+    enabled: yes

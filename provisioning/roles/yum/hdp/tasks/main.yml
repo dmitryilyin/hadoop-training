@@ -1,0 +1,29 @@
+---
+
+- name: Install the HDP repository
+  yum_repository:
+    name: hdp
+    state: present
+    description: HDP Repository
+    baseurl: '{{ hdp_repo_baseurl }}'
+    gpgkey: '{{ hdp_repo_gpgkey }}'
+    gpgcheck: yes
+    enabled: yes
+    priority: 1
+  tags:
+    - hdp
+  when: ansible_os_family == "RedHat"
+
+- name: Install the HDP Tools repository
+  yum_repository:
+    name: hdp-tools
+    state: present
+    description: HDP Tools Repository
+    baseurl: '{{ hdp_tools_repo_baseurl }}'
+    gpgkey: '{{ hdp_tools_repo_gpgkey }}'
+    gpgcheck: yes
+    enabled: yes
+    priority: 1
+  tags:
+    - hdp
+  when: ansible_os_family == "RedHat"

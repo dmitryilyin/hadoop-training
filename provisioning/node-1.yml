@@ -1,0 +1,16 @@
+---
+- name: Install node-1
+  hosts: node-1
+  connection: local
+
+  become: true
+  become_method: sudo
+  become_user: root
+
+  roles:
+  - bootstrap
+  - firewall
+  - keys
+  - hosts
+  - ntp
+  - ambari

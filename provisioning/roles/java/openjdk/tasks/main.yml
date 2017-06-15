@@ -1,0 +1,6 @@
+---
+
+- name: Install the OpenJDK 1.8 package
+  yum:
+    name: java-1.8.0-openjdk
+    state: present

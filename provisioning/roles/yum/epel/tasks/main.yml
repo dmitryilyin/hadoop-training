@@ -1,0 +1,14 @@
+---
+
+- name: Add the EPEL repository
+  yum_repository:
+    name: epel
+    state: present
+    description: EPEL YUM repo
+    baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+    gpgkey:  https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-$releasever
+    gpgcheck: yes
+    enabled: yes
+  tags:
+    - epel
+  when: ansible_os_family == "RedHat"

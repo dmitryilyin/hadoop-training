@@ -1,0 +1,7 @@
+---
+
+dependencies:
+  - role: yum/ambari
+#  - role: mariadb
+#  - role: java/openjdk
+

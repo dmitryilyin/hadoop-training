@@ -1,0 +1,8 @@
+.idea
+.vagrant
+*.retry
+*.swp
+*~
+
+/provisioning/hosts
+/provisioning/ansible.cfg

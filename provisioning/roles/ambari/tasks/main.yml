@@ -1,0 +1,6 @@
+---
+
+- name: Install the Ambari Server package
+  yum:
+    name: ambari-server
+    state: present

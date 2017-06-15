@@ -1,0 +1,11 @@
+---
+
+- name: Install the Official MariaDB repository
+  yum_repository:
+    name: mariadb
+    state: present
+    description: The official MariaDB repository
+    baseurl: '{{ mariadb_repo_baseurl }}'
+    gpgkey: '{{ mariadb_repo_gpgkey }}'
+    gpgcheck: yes
+    enabled: yes

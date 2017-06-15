@@ -1,0 +1,16 @@
+---
+- name: Install node-2
+  hosts: node-2
+  connection: local
+
+  become: true
+  become_method: sudo
+  become_user: root
+
+  roles:
+  - bootstrap
+  - firewall
+  - keys
+  - hosts
+  - ntp
+

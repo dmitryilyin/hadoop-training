@@ -1,0 +1,4 @@
+---
+
+ambari_repo_baseurl: http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0
+ambari_repo_gpgkey: http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins

@@ -1,0 +1,6 @@
+---
+
+- name: Install the console colors
+  template:
+    src: colorcmd.sh.j2
+    dest: /etc/profile.d/colorcmd.sh
